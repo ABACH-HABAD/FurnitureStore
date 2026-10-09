@@ -1,8 +1,8 @@
 ﻿using FurnitureStore.Domain.Models;
 
-namespace FurnitureStore.Application.Abstractions;
+namespace FurnitureStore.Domain.Repositories.Common;
 
-public interface IDataService<T> where T : BaseModel
+public interface IRepository<T> where T : BaseModel
 {
     public Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
     public Task<List<T>> GetAllAsync(CancellationToken cancellationToken = default);

@@ -2,7 +2,6 @@
 
 namespace FurnitureStore.Application.Views;
 
-public interface IMainView : IView
+public interface IPriceGraphView : IView
 {
-    public event EventHandler ShowSalesChartClicked;
 }

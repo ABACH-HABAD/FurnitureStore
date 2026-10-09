@@ -2,5 +2,5 @@
 
 public interface IView
 {
-    public void ShowMessage(string text);
+    public void Show();
 }

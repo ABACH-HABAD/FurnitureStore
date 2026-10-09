@@ -1,4 +1,5 @@
 ﻿using FurnitureStore.Domain.Models;
+using FurnitureStore.Domain.Repositories.Common;
 
 namespace FurnitureStore.Domain.Repositories;
 

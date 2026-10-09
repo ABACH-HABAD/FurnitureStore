@@ -11,6 +11,7 @@ public sealed class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.UseSqlite("Data Source=furniture.db");
         base.OnConfiguring(optionsBuilder);
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using FurnitureStore.Domain.Models;
-using FurnitureStore.Domain.Repositories;
 using FurnitureStore.Infrastructure.Database.Entities;
+using FurnitureStore.Domain.Repositories.Common;
 
 namespace FurnitureStore.Infrastructure.Database.Repositories;
 

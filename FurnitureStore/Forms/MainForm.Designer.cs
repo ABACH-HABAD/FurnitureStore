@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            ShowSalesButton = new Button();
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
@@ -39,16 +40,16 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 15F);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(229, 0);
+            label1.Location = new Point(268, 0);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(206, 84);
+            label1.Size = new Size(259, 158);
             label1.TabIndex = 0;
             label1.Text = "Добро пожаловать в систему контроля мебельного магзина";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += this.label1_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -57,21 +58,34 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
-            tableLayoutPanel1.Location = new Point(48, 51);
+            tableLayoutPanel1.Controls.Add(ShowSalesButton, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 24);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(680, 371);
+            tableLayoutPanel1.Size = new Size(798, 475);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // ShowSalesButton
+            // 
+            ShowSalesButton.Anchor = AnchorStyles.None;
+            ShowSalesButton.Location = new Point(67, 206);
+            ShowSalesButton.Name = "ShowSalesButton";
+            ShowSalesButton.Size = new Size(130, 61);
+            ShowSalesButton.TabIndex = 1;
+            ShowSalesButton.Text = "Посмотреть список товаров";
+            ShowSalesButton.UseVisualStyleBackColor = true;
+            ShowSalesButton.Click += ShowSalesButtonClick;
             // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(798, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -85,7 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(798, 499);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -105,5 +119,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem файлToolStripMenuItem;
+        private Button ShowSalesButton;
     }
 }
