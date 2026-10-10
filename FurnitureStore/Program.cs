@@ -58,10 +58,12 @@ internal static class Program
 
         services.AddTransient<IPriceGraphView, PriceGraphForm>();
         services.AddTransient<ISalesChartGraphView, SalesChartGraphForm>();
+        services.AddTransient<IFurnitureEditView, FurnitureEditForm>();
 
         services.AddSingleton<MainPresenter>();
 
         services.AddTransient<PriceGraphPresenter>();
         services.AddTransient<SalesChartGraphRresenter>();
+        services.AddTransient<FurnitureEditPresenter>();
     }
 }

@@ -77,7 +77,8 @@ public class MainPresenter : BasePresenter<IMainView>
 
     public void OnCreateNewFurnitureClicked(object? sender, EventArgs e)
     {
-
+        FurnitureEditPresenter presenter = _serviceProvider.GetRequiredService<FurnitureEditPresenter>();
+        presenter.Run();
     }
 
     protected override void OnDispose()

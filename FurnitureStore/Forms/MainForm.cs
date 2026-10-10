@@ -9,7 +9,7 @@ namespace FurnitureStore;
 
 public partial class MainForm : Form, IMainView
 {
-    public IFurnitureListView FurnitureList => ListOfProducts;
+    public IFurnitureListView FurnitureList { get; }// => ListOfProducts;
 
     public event EventHandler? ShowSalesChartClicked;
     public event EventHandler? ShowOneMoreShitClicked;

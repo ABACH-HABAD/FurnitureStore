@@ -34,6 +34,19 @@ namespace FurnitureStore.Forms
             set => DescBox.Text = value;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool CanClose { get; set; }
 
+        private void AcceptButton_Click(object sender, EventArgs e)
+        {
+            AcceptClicked?.Invoke(this, e);
+            if (CanClose) Close();
+        }
+
+        private void DenyButton_Click(object sender, EventArgs e)
+        {
+            DenyClicked?.Invoke(this, e);
+            if (CanClose) Close();
+        }
     }
 }

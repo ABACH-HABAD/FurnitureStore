@@ -6,11 +6,7 @@ namespace FurnitureStore.Controls.UserControls;
 
 public partial class ListOfProductsUserControl : UserControl, IFurnitureListView
 {
-    public event EventHandler CreateButtonClick
-    {
-        add => CreateButton.Click += value;
-        remove => CreateButton.Click -= value;
-    }
+    public event EventHandler? CreateButtonClick;
 
     private readonly BindingList<FurnitureModel> _furnituresList = [];
 
@@ -48,5 +44,10 @@ public partial class ListOfProductsUserControl : UserControl, IFurnitureListView
             default:
                 break;
         }
+    }
+
+    private void CreateButton_Click(object sender, EventArgs e)
+    {
+        CreateButtonClick?.Invoke(sender, e);
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            NameBox = new TextBox();
             PriceBox = new TextBox();
-            NameBox = new Label();
+            NameLabel = new Label();
             label2 = new Label();
             DescBox = new TextBox();
             label1 = new Label();
@@ -40,14 +40,14 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // NameBox
             // 
-            textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Font = new Font("Segoe UI", 15F);
-            textBox1.Location = new Point(268, 8);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(259, 34);
-            textBox1.TabIndex = 0;
+            NameBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            NameBox.Font = new Font("Segoe UI", 15F);
+            NameBox.Location = new Point(268, 8);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(259, 34);
+            NameBox.TabIndex = 0;
             // 
             // PriceBox
             // 
@@ -58,16 +58,16 @@
             PriceBox.Size = new Size(259, 34);
             PriceBox.TabIndex = 1;
             // 
-            // NameBox
+            // NameLabel
             // 
-            NameBox.Anchor = AnchorStyles.Left;
-            NameBox.AutoSize = true;
-            NameBox.Font = new Font("Segoe UI", 15F);
-            NameBox.Location = new Point(3, 11);
-            NameBox.Name = "NameBox";
-            NameBox.Size = new Size(104, 28);
-            NameBox.TabIndex = 2;
-            NameBox.Text = "Название:";
+            NameLabel.Anchor = AnchorStyles.Left;
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Segoe UI", 15F);
+            NameLabel.Location = new Point(3, 11);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(104, 28);
+            NameLabel.TabIndex = 2;
+            NameLabel.Text = "Название:";
             // 
             // label2
             // 
@@ -104,11 +104,11 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(NameBox, 0, 0);
+            tableLayoutPanel1.Controls.Add(NameLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 0, 2);
             tableLayoutPanel1.Controls.Add(PriceBox, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(NameBox, 1, 0);
             tableLayoutPanel1.Controls.Add(AcceptButton, 0, 3);
             tableLayoutPanel1.Controls.Add(DenyButton, 1, 3);
             tableLayoutPanel1.Controls.Add(DescBox, 1, 2);
@@ -135,6 +135,7 @@
             AcceptButton.TabIndex = 6;
             AcceptButton.Text = "Подтвердить";
             AcceptButton.UseVisualStyleBackColor = false;
+            AcceptButton.Click += AcceptButton_Click;
             // 
             // DenyButton
             // 
@@ -147,6 +148,7 @@
             DenyButton.TabIndex = 7;
             DenyButton.Text = "Отменить";
             DenyButton.UseVisualStyleBackColor = false;
+            DenyButton.Click += DenyButton_Click;
             // 
             // FurnitureEditForm
             // 
@@ -163,14 +165,14 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox NameBox;
         private TextBox PriceBox;
-        private Label NameBox;
+        private Label NameLabel;
         private Label label2;
         private TextBox DescBox;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button AcceptButton;
+        private new Button AcceptButton;
         private Button DenyButton;
     }
 }

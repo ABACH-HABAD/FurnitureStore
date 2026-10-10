@@ -13,6 +13,9 @@
     <Compile Update="Controls\UserControls\ListOfProductsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\UserControls\MainMenuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controls\UserControls\ProductUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

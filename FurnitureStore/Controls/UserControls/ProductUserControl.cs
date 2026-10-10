@@ -9,7 +9,7 @@ public partial class ProductUserControl : UserControl
         add => EditButton.Click += value;
         remove => EditButton.Click -= value;
     }
-    
+
     public event EventHandler DeleteButtonClick
     {
         add => DeleteButton.Click += value;
@@ -23,8 +23,8 @@ public partial class ProductUserControl : UserControl
 
     public void BindToFurniture(FurnitureModel furniture)
     {
-        NameTextBlock.DataBindings.Add("Text", furniture, "Name", true, DataSourceUpdateMode.OnPropertyChanged);
-        PriceTextBlock.DataBindings.Add("Text", furniture, "Price", true, DataSourceUpdateMode.OnPropertyChanged);
-        DesctiptionTextBlock.DataBindings.Add("Text", furniture, "Desctiption", true, DataSourceUpdateMode.OnPropertyChanged);
+        NameTextBlock.Text = furniture.Name;
+        PriceTextBlock.Text = furniture.Price.ToString();
+        DesctiptionTextBlock.Text = furniture.Description;
     }
 }

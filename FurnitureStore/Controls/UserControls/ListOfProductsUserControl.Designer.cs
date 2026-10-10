@@ -67,6 +67,7 @@
             CreateButton.TabIndex = 1;
             CreateButton.Text = "Добавить";
             CreateButton.UseVisualStyleBackColor = true;
+            CreateButton.Click += CreateButton_Click;
             // 
             // ListOfProductsUserControl
             // 
