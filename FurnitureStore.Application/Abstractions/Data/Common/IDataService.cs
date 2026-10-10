@@ -1,5 +1,5 @@
 ﻿using FurnitureStore.Application.Services.Common;
-using FurnitureStore.Domain.Models;
+using FurnitureStore.Domain.Models.Common;
 
 namespace FurnitureStore.Application.Abstractions.Data.Common;
 

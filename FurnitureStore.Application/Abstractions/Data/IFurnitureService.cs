@@ -1,6 +1,6 @@
-﻿using FurnitureStore.Domain.Models;
-using FurnitureStore.Domain.Repositories.Common;
+﻿using FurnitureStore.Application.Abstractions.Data.Common;
+using FurnitureStore.Domain.Models;
 
 namespace FurnitureStore.Application.Abstractions.Data;
 
-public interface IFurnitureService : IRepository<FurnitureModel>;
+public interface IFurnitureService : IDataService<FurnitureModel>;

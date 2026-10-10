@@ -2,14 +2,14 @@
 
 namespace FurnitureStore.Application.Presenters.Common;
 
-public abstract class BasePresenter<T>(T view) : IPresenter, IDisposable where T : IView
+public abstract class BasePresenter<TView>(TView view) : IPresenter, IDisposable where TView : IView
 {
     private bool _disposed;
 
-    protected readonly T _view = view;
-    public T View => _view;
+    protected readonly TView _view = view;
+    public TView View => _view;
 
-    public void Run()
+    public virtual void Run()
     {
         _view.Show();
     }

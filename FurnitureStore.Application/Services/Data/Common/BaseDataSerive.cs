@@ -1,7 +1,7 @@
-﻿using FurnitureStore.Domain.Models;
-using FurnitureStore.Domain.Repositories.Common;
+﻿using FurnitureStore.Domain.Repositories.Common;
 using FurnitureStore.Application.Abstractions.Data.Common;
 using FurnitureStore.Application.Services.Common;
+using FurnitureStore.Domain.Models.Common;
 
 namespace FurnitureStore.Application.Services.Data.Common;
 

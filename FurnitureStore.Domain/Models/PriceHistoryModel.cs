@@ -1,4 +1,6 @@
-﻿namespace FurnitureStore.Domain.Models;
+﻿using FurnitureStore.Domain.Models.Common;
+
+namespace FurnitureStore.Domain.Models;
 
 public class PriceHistoryModel : BaseModel
 {

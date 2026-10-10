@@ -1,4 +1,4 @@
-﻿namespace FurnitureStore.Domain.Models;
+﻿namespace FurnitureStore.Domain.Models.Common;
 
 public abstract class BaseModel
 {

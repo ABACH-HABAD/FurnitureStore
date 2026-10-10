@@ -21,8 +21,4 @@
     <ProjectReference Include="..\FurnitureStore.Infrastructure\FurnitureStore.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controls\UserControls\" />
-  </ItemGroup>
-
 </Project>

@@ -1,17 +1,17 @@
-﻿using FurnitureStore.Application.Views;
+﻿using System.ComponentModel;
+using FurnitureStore.Application.Views;
 using FurnitureStore.Application.Views.Common;
 using FurnitureStore.Controls.Gdi;
-using System.ComponentModel;
 
 namespace FurnitureStore.Forms;
 
-public partial class PriceGraphForm : Form, IPriceGraphView
+public partial class SalesChartGraphForm : Form, ISalesChartGraphView
 {
-    private readonly PriceHistoryGraphControl _graph;
+    private readonly SalesCountsGraphControl _graph;
 
-    public PriceGraphForm()
+    public SalesChartGraphForm()
     {
-        _graph = new()
+        _graph = new SalesCountsGraphControl()
         {
             Dock = DockStyle.Fill,
         };

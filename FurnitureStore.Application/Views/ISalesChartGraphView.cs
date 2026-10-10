@@ -2,6 +2,7 @@
 
 namespace FurnitureStore.Application.Views;
 
-public interface ISalesChartView : IView
+public interface ISalesChartGraphView : IView
 {
+    public GraphView GraphView { get; set; }
 }

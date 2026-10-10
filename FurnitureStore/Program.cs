@@ -7,6 +7,8 @@ using FurnitureStore.Application.Views;
 using FurnitureStore.Forms;
 using FurnitureStore.Infrastructure.Database.Repositories;
 using FurnitureStore.Services;
+using FurnitureStore.Application.Abstractions.Data;
+using FurnitureStore.Application.Services.Data;
 
 namespace FurnitureStore;
 
@@ -46,14 +48,20 @@ internal static class Program
         services.AddScoped<IPriceHistoryRepository, PriceHistoryRepository>();
         services.AddScoped<ISaleRepository, SaleRepository>();
 
+        services.AddScoped<IFurnitureService, FurnitureService>();
+        services.AddScoped<IPriceHistoryService, PriceHistoryService>();
+        services.AddScoped<ISaleService, SaleService>();
+
         services.AddSingleton<IMessageService, MessageService>();
 
         services.AddSingleton<IMainView, MainForm>();
 
         services.AddTransient<IPriceGraphView, PriceGraphForm>();
+        services.AddTransient<ISalesChartGraphView, SalesChartGraphForm>();
 
         services.AddSingleton<MainPresenter>();
 
         services.AddTransient<PriceGraphPresenter>();
+        services.AddTransient<SalesChartGraphRresenter>();
     }
 }

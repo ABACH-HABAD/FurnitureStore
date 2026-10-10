@@ -2,7 +2,7 @@
 
 namespace FurnitureStore.Application.Views;
 
-public interface IPriceGraphView : IView
+public interface IGraphView
 {
     public GraphView GraphView { get; set; }
 }
