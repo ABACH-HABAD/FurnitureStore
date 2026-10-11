@@ -1,4 +1,4 @@
-﻿using FurnitureStore.Application.Views;
+﻿using FurnitureStore.Application.Views.Forms;
 using System.ComponentModel;
 
 namespace FurnitureStore.Forms

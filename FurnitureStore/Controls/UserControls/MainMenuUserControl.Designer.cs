@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
+            MainMenu = new TableLayoutPanel();
             ExitButton = new Button();
             ShowProductListButton = new Button();
             label1 = new Label();
             GenerateSalesReportButton = new Button();
-            tableLayoutPanel1.SuspendLayout();
+            MainMenu.SuspendLayout();
             SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // MainMenu
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(ExitButton, 0, 3);
-            tableLayoutPanel1.Controls.Add(ShowProductListButton, 0, 1);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(GenerateSalesReportButton, 0, 2);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(830, 449);
-            tableLayoutPanel1.TabIndex = 0;
+            MainMenu.ColumnCount = 1;
+            MainMenu.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            MainMenu.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            MainMenu.Controls.Add(ExitButton, 0, 3);
+            MainMenu.Controls.Add(ShowProductListButton, 0, 1);
+            MainMenu.Controls.Add(label1, 0, 0);
+            MainMenu.Controls.Add(GenerateSalesReportButton, 0, 2);
+            MainMenu.Dock = DockStyle.Fill;
+            MainMenu.Location = new Point(0, 0);
+            MainMenu.Name = "MainMenu";
+            MainMenu.RowCount = 4;
+            MainMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            MainMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            MainMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            MainMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            MainMenu.Size = new Size(830, 449);
+            MainMenu.TabIndex = 0;
             // 
             // ExitButton
             // 
@@ -62,7 +62,7 @@
             ExitButton.Location = new Point(350, 362);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(130, 61);
-            ExitButton.TabIndex = 5;
+            ExitButton.TabIndex = 2;
             ExitButton.Text = "Выйти";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
@@ -73,7 +73,7 @@
             ShowProductListButton.Location = new Point(350, 137);
             ShowProductListButton.Name = "ShowProductListButton";
             ShowProductListButton.Size = new Size(130, 61);
-            ShowProductListButton.TabIndex = 4;
+            ShowProductListButton.TabIndex = 0;
             ShowProductListButton.Text = "Посмотреть список товаров";
             ShowProductListButton.UseVisualStyleBackColor = true;
             ShowProductListButton.Click += ShowProductListButton_Click;
@@ -98,7 +98,7 @@
             GenerateSalesReportButton.Location = new Point(350, 249);
             GenerateSalesReportButton.Name = "GenerateSalesReportButton";
             GenerateSalesReportButton.Size = new Size(130, 61);
-            GenerateSalesReportButton.TabIndex = 3;
+            GenerateSalesReportButton.TabIndex = 1;
             GenerateSalesReportButton.Text = "Сформировать отчёт о продажах";
             GenerateSalesReportButton.UseVisualStyleBackColor = true;
             GenerateSalesReportButton.Click += GenerateSalesReportButton_Click;
@@ -107,17 +107,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(MainMenu);
             Name = "MainMenuUserControl";
             Size = new Size(830, 449);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            MainMenu.ResumeLayout(false);
+            MainMenu.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel MainMenu;
         private Label label1;
         private Button ExitButton;
         private Button ShowProductListButton;

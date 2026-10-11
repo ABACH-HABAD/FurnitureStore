@@ -1,6 +1,6 @@
-﻿using FurnitureStore.Application.Views.Common;
+﻿using FurnitureStore.Application.Views.Forms.Common;
 
-namespace FurnitureStore.Application.Views;
+namespace FurnitureStore.Application.Views.Forms;
 
 public interface IFurnitureEditView : IView
 {

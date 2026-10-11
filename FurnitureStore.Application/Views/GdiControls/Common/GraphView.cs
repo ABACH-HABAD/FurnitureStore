@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace FurnitureStore.Application.Views.Common;
+namespace FurnitureStore.Application.Views.GdiControls.Common;
 
 public sealed class GraphView
 {

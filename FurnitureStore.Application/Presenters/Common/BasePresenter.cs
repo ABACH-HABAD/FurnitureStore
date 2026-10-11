@@ -1,4 +1,4 @@
-﻿using FurnitureStore.Application.Views.Common;
+﻿using FurnitureStore.Application.Views.Forms.Common;
 
 namespace FurnitureStore.Application.Presenters.Common;
 

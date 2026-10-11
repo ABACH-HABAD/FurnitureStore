@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 using FurnitureStore.Domain.Models;
-using FurnitureStore.Application.Views;
-using FurnitureStore.Application.Views.Common;
 using FurnitureStore.Application.Presenters.Common;
+using FurnitureStore.Application.Views.GdiControls.Common;
+using FurnitureStore.Application.Views.Forms;
 
 namespace FurnitureStore.Application.Presenters;
 

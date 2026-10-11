@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
-using FurnitureStore.Application.Views;
-using FurnitureStore.Application.Views.Common;
+using FurnitureStore.Application.Views.Forms;
+using FurnitureStore.Application.Views.GdiControls.Common;
 using FurnitureStore.Controls.Gdi;
 
 namespace FurnitureStore.Forms;

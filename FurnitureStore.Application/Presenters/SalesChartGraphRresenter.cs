@@ -1,7 +1,6 @@
 ﻿using FurnitureStore.Application.Presenters.Common;
-using FurnitureStore.Application.Views;
-using FurnitureStore.Application.Views.Common;
-using FurnitureStore.Domain.Models;
+using FurnitureStore.Application.Views.Forms;
+using FurnitureStore.Application.Views.GdiControls.Common;
 using System.Drawing;
 
 namespace FurnitureStore.Application.Presenters;
@@ -10,9 +9,8 @@ public class SalesChartGraphRresenter(ISalesChartGraphView view) : BasePresenter
 {
     public void SetData(object data)
     {
-        if (data is List<SaleModel> salemodels) SetData(salemodels);
-        else throw new ArgumentException("data is not a List<SaleModel>", nameof(data));
-
+        if (data is List<(string name, int count)> salemodels) SetData(salemodels);
+        else throw new ArgumentException("data is not a List<(string name, int count)>", nameof(data));
     }
 
     private static double SelectStep(double min, double max, int count) => Math.Ceiling(max - min) / count;

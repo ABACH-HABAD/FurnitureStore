@@ -2,9 +2,10 @@
 using FurnitureStore.Application.Abstractions.Data;
 using FurnitureStore.Application.Presenters.Common;
 using FurnitureStore.Application.Services.Common;
-using FurnitureStore.Application.Views;
+using FurnitureStore.Application.Views.Forms;
 using FurnitureStore.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace FurnitureStore.Application.Presenters;
 
@@ -17,10 +18,16 @@ public class MainPresenter : BasePresenter<IMainView>
     {
         _serviceProvider = serviceProvider;
         _messageService = messageService;
-        _view.ShowSalesChartClicked += OnShowSalesChartClick;
-        _view.ShowOneMoreShitClicked += OnShowSalesChartClick2;
 
-        _view.FurnitureList.CreateButtonClick += OnCreateNewFurnitureClicked;
+        _view.Exiting += OnExit;
+        _view.ShowingMainMenu += OnShowingMainMenu;
+        _view.ShowingFurnitureList += OnShowingFurnitureList;
+        _view.ShowingSalesChartClicked += OnShowingSalesChartClick;
+
+        _view.MainMenuView.ExitClick += OnExit;
+        _view.MainMenuView.ShowProductListClick += OnShowingFurnitureList;
+        _view.MainMenuView.GenerateSalesReportClick += OnShowingSalesChartClick;
+
     }
 
     public override async void Run()
@@ -37,10 +44,37 @@ public class MainPresenter : BasePresenter<IMainView>
             else _messageService.SendMessage(result?.Message ?? "ОШИБКА!");
         }
 
-        furnitures.ForEach(_view.FurnitureList.AddToList);
+        furnitures.ForEach(_view.FurnitureListView.AddToList);
     }
 
-    public async void OnShowSalesChartClick(object? sender, EventArgs e)
+    public void OnShowingFurnitureList(object? sender, EventArgs e)
+    {
+        _view.ShowFurnitureList();
+    }
+
+    public void OnShowingMainMenu(object? sender, EventArgs e)
+    {
+        _view.ShowMainMenu();
+    }
+
+    public async void OnShowingSalesChartClick(object? sender, EventArgs e)
+    {
+        using IServiceScope scope = _serviceProvider.CreateScope();
+
+        SalesChartGraphRresenter presenter = scope.ServiceProvider.GetRequiredService<SalesChartGraphRresenter>();
+
+        ISaleService saleService = scope.ServiceProvider.GetRequiredService<ISaleService>();
+        var result = await saleService.GetSalesCountByFurnitureModelsAsync();
+
+        presenter.Run();
+
+        if (result.IsSuccess)
+        {
+            presenter.SetData(result.Data ?? []);
+        }
+    }
+
+    public async void OnShowSalesChartClick2(object? sender, EventArgs e)
     {
         PriceGraphPresenter presenter = _serviceProvider.GetRequiredService<PriceGraphPresenter>();
         presenter.Run();
@@ -59,21 +93,6 @@ public class MainPresenter : BasePresenter<IMainView>
         presenter.SetData(ph);
     }
 
-    public async void OnShowSalesChartClick2(object? sender, EventArgs e)
-    {
-        SalesChartGraphRresenter presenter = _serviceProvider.GetRequiredService<SalesChartGraphRresenter>();
-        presenter.Run();
-
-        List<(string name, int count)> values =
-            [
-                ("диван", 10),
-                ("шкаф", 15),
-                ("стол", 8),
-                ("кровать", 12),
-            ];
-
-        presenter.SetData(values);
-    }
 
     public void OnCreateNewFurnitureClicked(object? sender, EventArgs e)
     {
@@ -81,12 +100,24 @@ public class MainPresenter : BasePresenter<IMainView>
         presenter.Run();
     }
 
+    public void OnExit(object? sender, EventArgs e)
+    {
+        Dispose(true);
+        _view.Close();
+    }
+
     protected override void OnDispose()
     {
-        _view.ShowSalesChartClicked -= OnShowSalesChartClick;
-        _view.ShowOneMoreShitClicked -= OnShowSalesChartClick2;
+        _view.Exiting -= OnExit;
+        _view.ShowingMainMenu -= OnShowingMainMenu;
+        _view.ShowingFurnitureList -= OnShowingFurnitureList;
+        _view.ShowingSalesChartClicked -= OnShowingSalesChartClick;
 
-        _view.FurnitureList.ClearList();
-        _view.FurnitureList.CreateButtonClick -= OnCreateNewFurnitureClicked;
+        _view.MainMenuView.ExitClick -= OnExit;
+        _view.MainMenuView.ShowProductListClick -= OnShowingFurnitureList;
+
+        _view.FurnitureListView.ClearList();
+        _view.FurnitureListView.CreateButtonClick -= OnCreateNewFurnitureClicked;
+        _view.MainMenuView.GenerateSalesReportClick -= OnShowingSalesChartClick;
     }
 }

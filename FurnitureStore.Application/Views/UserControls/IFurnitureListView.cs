@@ -1,6 +1,6 @@
 ﻿using FurnitureStore.Domain.Models;
 
-namespace FurnitureStore.Application.Views;
+namespace FurnitureStore.Application.Views.UserControls;
 
 public interface IFurnitureListView
 {

@@ -1,5 +1,4 @@
-﻿using FurnitureStore.Application.Views.Common;
-using FurnitureStore.Controls.Gdi.Common;
+﻿using FurnitureStore.Controls.Gdi.Common;
 
 namespace FurnitureStore.Controls.Gdi;
 

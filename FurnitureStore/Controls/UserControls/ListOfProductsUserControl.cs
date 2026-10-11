@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using FurnitureStore.Domain.Models;
-using FurnitureStore.Application.Views;
+using FurnitureStore.Application.Views.UserControls;
 
 namespace FurnitureStore.Controls.UserControls;
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
-using FurnitureStore.Application.Views;
-using FurnitureStore.Application.Views.Common;
+using FurnitureStore.Application.Views.GdiControls;
+using FurnitureStore.Application.Views.GdiControls.Common;
 
 namespace FurnitureStore.Controls.Gdi.Common;
 

@@ -3,12 +3,14 @@ using Microsoft.Extensions.Hosting;
 using FurnitureStore.Domain.Repositories;
 using FurnitureStore.Application.Abstractions;
 using FurnitureStore.Application.Presenters;
-using FurnitureStore.Application.Views;
 using FurnitureStore.Forms;
 using FurnitureStore.Infrastructure.Database.Repositories;
 using FurnitureStore.Services;
 using FurnitureStore.Application.Abstractions.Data;
 using FurnitureStore.Application.Services.Data;
+using FurnitureStore.Application.Views.Forms;
+using FurnitureStore.Application.Views.UserControls;
+using FurnitureStore.Controls.UserControls;
 
 namespace FurnitureStore;
 
@@ -53,6 +55,9 @@ internal static class Program
         services.AddScoped<ISaleService, SaleService>();
 
         services.AddSingleton<IMessageService, MessageService>();
+
+        services.AddSingleton<IMainMenuView, MainMenuUserControl>();
+        services.AddSingleton<IFurnitureListView, ListOfProductsUserControl>();
 
         services.AddSingleton<IMainView, MainForm>();
 
